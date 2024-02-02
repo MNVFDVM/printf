@@ -7,9 +7,9 @@
  */
 int print_c(va_list val)
 {
-	char h;
+	char s;
 
-	h = va_arg(val, int);
-	_putchar(h);
+	s = va_arg(val, int);
+	_putchar(s);
 	return (1);
 }

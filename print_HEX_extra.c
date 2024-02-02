@@ -7,30 +7,30 @@
  */
 int print_HEX_extra(unsigned int num)
 {
-	int j;
+	int i;
 	int *array;
-	int c = 0;
+	int counter = 0;
 	unsigned int tem = num;
 
 	while (num / 16 != 0)
 	{
 		num /= 16;
-		c++;
+		counter++;
 	}
-	c++;
-	array = malloc(c * sizeof(int));
+	counter++;
+	array = malloc(counter * sizeof(int));
 
-	for (j = 0; j < c; j++)
+	for (i = 0; i < counter; i++)
 	{
-		array[j] = tem % 16;
+		array[i] = tem % 16;
 		tem /= 16;
 	}
-	for (j = c - 1; j >= 0; j--)
+	for (i = counter - 1; i >= 0; i--)
 	{
-		if (array[j] > 9)
-			array[j] = array[j] + 7;
-		_putchar(array[j] + '0');
+		if (array[i] > 9)
+			array[i] = array[i] + 7;
+		_putchar(array[i] + '0');
 	}
 	free(array);
-	return (c);
+	return (counter);
 }
